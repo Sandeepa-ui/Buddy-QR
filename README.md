@@ -35,3 +35,23 @@ offline. The Apps Script account's Google Drive owns the database file.
 
 > This is a small shared registry, not a high-concurrency database. Avoid
 > editing the same record on multiple devices at exactly the same time.
+
+## Build the Android app
+
+The `app/` folder is a native Android Studio project that packages the same
+Buddy System interface. It includes Android camera permission handling and
+image-file selection for QR scanning.
+
+### Build locally
+
+1. Open this folder in Android Studio.
+2. Let Android Studio install Android SDK 35 and Gradle dependencies.
+3. Select the `app` configuration and run it on a device or emulator.
+4. For an APK, use **Build -> Build Bundle(s) / APK(s) -> Build APK(s)**.
+
+### Build on GitHub
+
+The `Build Android app` workflow builds a debug APK on every push to `main`.
+Download it from the workflow run's **Artifacts** section. For Play Store
+distribution, create a signed release build in Android Studio and keep the
+signing key outside the repository.
